@@ -54,5 +54,6 @@ docs/_build/
 
 # User specific
 config.py
+*.txt
 
 target/
