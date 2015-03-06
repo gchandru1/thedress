@@ -51,4 +51,8 @@ coverage.xml
 docs/_build/
 
 # PyBuilder
+
+# User specific
+config.py
+
 target/
