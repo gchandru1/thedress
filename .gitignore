@@ -51,10 +51,10 @@ coverage.xml
 docs/_build/
 
 # PyBuilder
+target/
 
 # User specific
 config.py
 *.txt
 *.csv
-
-target/
+*.swp
