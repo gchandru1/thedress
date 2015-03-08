@@ -16,7 +16,7 @@ def pretty_print(d):
 
 #get tweets for given query
 def search_tweets(search_term, rtype):
-    query = search_term + ' since:2015-02-26'
+    query = search_term + ' since:2015-02-26 -filter:retweets'
     results = twitter.search(q = query, result_type = rtype, lang = 'en', count = 100)
 #   pretty_print(results)    
     return results.get('statuses')
@@ -33,7 +33,7 @@ def save_tweets():
         for t in tweets:
             hashtags = [tag['text'] for tag in t['entities']['hashtags']]
             text = t['text'].encode('ascii', 'ignore')
-            csvdata = [text, t['id'], t['favorite_count'], t['retweeted'],
+            csvdata = [t['id'], text, t['favorite_count'], t['retweeted'],
                        t['retweet_count'], t['user']['verified'], t['user']['followers_count'], 
                        t['created_at'] , t.get('possibly_sensitive'), '|'.join(hashtags)]
             writer.writerow(csvdata)
