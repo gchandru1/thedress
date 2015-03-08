@@ -55,5 +55,6 @@ docs/_build/
 # User specific
 config.py
 *.txt
+*.csv
 
 target/
